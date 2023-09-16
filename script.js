@@ -10,8 +10,8 @@ function ViewDeleteData() {
             <td>${data.nama}</td>
             <td>${data.umur}</td>
             <td>${data.uangSangu}</td>
-            <button class="delete-btn rounded text-danger">
-            DELETE
+            <button class="delete-btn btn-danger rounded text-dark">
+            <b>DELETE</b>
             </button>
         `
         var currentTodo = document.querySelectorAll('.delete-btn');
@@ -61,6 +61,11 @@ registrationForm.addEventListener('submit', (e) => {
         document.getElementById('umur').value = ''
         document.getElementById('uang-sangu').value = ''
         return
+    } else {
+        alert('Data anda berhasil disubmit!')
+        document.getElementById('nama').value = ''
+        document.getElementById('umur').value = ''
+        document.getElementById('uang-sangu').value = ''
     }
 
     pendaftar.push({ nama, umur, uangSangu })

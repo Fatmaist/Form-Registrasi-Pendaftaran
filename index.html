@@ -9,8 +9,29 @@
 </head>
 
 <body>
-    <div class="tab-content" id="registrasi">
-        <div class="tab-pane fade show active">
+    <div class="container mt-5 mb-5">
+        <div class="btn-group d-flex mx-auto justify-content-center">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" id="registrasi-tab" data-bs-toggle="tab" href="#registrasi" role="tab">
+                        <input type="radio" class="btn-check" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary">REGISTRASI</label>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="list-pendaftar-tab" data-bs-toggle="tab" href="#list-pendaftar" role="tab">
+                        <input type="radio" class="btn-check" autocomplete="off">
+                        <label class="btn btn-outline-primary">LIST PENDAFTAR</label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="tab-content">
+        <h3 class="text-center">Halo, selamat datang!</h3>
+        <div class="tab-pane fade show active" id="registrasi" role="tabpanel">
             <div class="container mt-3">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">
@@ -20,16 +41,16 @@
                                 <form id="registrationForm">
                                     <div class="mb-3 ">
                                         <label for="nama" class="form-label">Nama</label>
-                                        <input type="text" class="form-control" id="nama">
+                                        <input type="text" class="form-control" id="nama" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="umur" class="form-label">Umur</label>
-                                        <input type="number" class="form-control" id="umur">
+                                        <input type="number" class="form-control" id="umur" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="uang-sangu" class="form-label">Uang Sangu</label>
                                         <input type="number" class="form-control" id="uang-sangu" min="100000"
-                                            max="1000000">
+                                            max="1000000" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary" id="btn-su">Submit</button>
                                 </form>
@@ -40,8 +61,7 @@
             </div>
         </div>
 
-
-        <div class="w-full" id="list-pendaftar">
+        <div class="tab-pane fade" id="list-pendaftar" role="tabpanel">
             <div class="container mt-3">
                 <h2>LIST PENDAFTAR</h2>
                 <table class="table">
@@ -53,8 +73,7 @@
                             <td>Keterangan</td>
                         </tr>
                     </thead>
-                    <tbody id="pendaftarTable">
-                    </tbody>
+                    <tbody id="pendaftarTable"></tbody>
                 </table>
                 <p id="resume"></p>
             </div>
