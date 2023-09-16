@@ -23,6 +23,27 @@ function ViewDeleteData() {
     })
 }
 
+function hitungRataRata() {
+    let totalUmur = 0
+    let totalUangSangu = 0
+
+    pendaftar.forEach((data) => {
+        totalUmur += data.umur
+        totalUangSangu += data.uangSangu
+    })
+
+    rataRataUmur = totalUmur / pendaftar.length
+    rataRataUangSangu = totalUangSangu / pendaftar.length
+    return { rataRataUmur, rataRataUangSangu }
+}
+
+function tampilkanResume(index) {
+    resume = document.getElementById('resume')
+    const { rataRataUmur, rataRataUangSangu } = hitungRataRata()
+
+    resume.innerHTML = `RESUME \nRata-rata pendaftar memiliki uang sangu sebesar ${rataRataUangSangu.toFixed(2)} dengan rata-rata umur ${rataRataUmur.toFixed(2)}`
+}
+
 const registrationForm = document.getElementById('registrationForm')
 registrationForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -41,7 +62,7 @@ registrationForm.addEventListener('submit', (e) => {
 
     pendaftar.push({ nama, umur, uangSangu })
 
-    ViewDeleteDataData()
+    ViewDeleteData()
     tampilkanResume()
 })
 
