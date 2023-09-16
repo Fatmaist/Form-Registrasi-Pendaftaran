@@ -6,6 +6,44 @@
     <title>Form Registrasi</title>
 </head>
 <body>
-    
+    <div id="registrasi">
+        <div class="container">
+            <form>
+                <div>
+                    <label for="nama">Nama</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label for="umur">Umur</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label for="uang-sangu">Uang Sangu</label>
+                    <input type="text">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="list-pendaftar">
+            <div class="container">
+                <h2>List Pendaftar</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Nama</td>
+                            <td>Umur</td>
+                            <td>Uang Sangu</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody id="pendaftarTable"></tbody>
+                </table>
+                <p id="resume"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
