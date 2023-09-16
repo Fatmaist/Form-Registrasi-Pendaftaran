@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Registrasi</title>
+    <title>Pendaftaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <div id="registrasi">
-        <div class="container">
-            <form id="registration-form">
-                <div>
-                    <label for="nama" id="nama">Nama</label>
-                    <input type="text">
+    <div class="tab-content" id="registrasi">
+        <div class="tab-pane fade show active">
+            <div class="container mt-3">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h2 class="card-title text-center">FORM REGISTRASI</h2>
+                                <form id="registrationForm">
+                                    <div class="mb-3 ">
+                                        <label for="nama" class="form-label">Nama</label>
+                                        <input type="text" class="form-control" id="nama">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="umur" class="form-label">Umur</label>
+                                        <input type="number" class="form-control" id="umur">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="uang-sangu" class="form-label">Uang Sangu</label>
+                                        <input type="number" class="form-control" id="uang-sangu" min="100000"
+                                            max="1000000">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="btn-su">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label for="umur" id="umur">Umur</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label for="uang-sangu" id="uang-sangu">Uang Sangu</label>
-                    <input type="text">
-                </div>
-                <button type="submit" id="list-pendaftar-tab">Submit</button>
-            </form>
+            </div>
         </div>
 
-        <div id="list-pendaftar">
-            <div class="container">
-                <h2>List Pendaftar</h2>
+
+        <div class="w-full" id="list-pendaftar">
+            <div class="container mt-3">
+                <h2>LIST PENDAFTAR</h2>
                 <table class="table">
                     <thead>
                         <tr>
@@ -37,13 +53,16 @@
                             <td>Keterangan</td>
                         </tr>
                     </thead>
-                    <tbody id="pendaftarTable"></tbody>
+                    <tbody id="pendaftarTable">
+                    </tbody>
                 </table>
                 <p id="resume"></p>
             </div>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

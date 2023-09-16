@@ -5,21 +5,21 @@ function ViewDeleteData() {
     Registration.innerHTML = ''
 
     pendaftar.forEach((data, index) => {
-        const row = Registration.insertRow()
-        row.innerHTML =+`
-        <td>${data.nama}</td>
+        const row = Registration.insertRow();
+        row.innerHTML = `
+            <td>${data.nama}</td>
             <td>${data.umur}</td>
             <td>${data.uangSangu}</td>
             <button class="delete-btn rounded text-danger">
             DELETE
             </button>
-            `
-            var currentReg = document.querySelectorAll('.delete-btn')
-            for (let i = 0; i < currentReg.length; i++) {
-                currentReg[i].onclick = function() {
-                    this.parentNode.remove()
-                }
+        `
+        var currentTodo = document.querySelectorAll('.delete-btn');
+        for (let i = 0; i <currentTodo.length; i++) {
+            currentTodo[i].onclick = function() {
+                this.parentNode.remove();
             }
+        }
     })
 }
 
@@ -41,7 +41,7 @@ function tampilkanResume(index) {
     resume = document.getElementById('resume')
     const { rataRataUmur, rataRataUangSangu } = hitungRataRata()
 
-    resume.innerHTML = `RESUME \nRata-rata pendaftar memiliki uang sangu sebesar ${rataRataUangSangu.toFixed(2)} dengan rata-rata umur ${rataRataUmur.toFixed(2)}`
+    resume.innerHTML = `<b>RESUME</b> <br>Rata-rata pendaftar memiliki uang sangu sebesar ${rataRataUangSangu.toFixed(2)} dengan rata-rata umur ${rataRataUmur.toFixed(2)}`
 }
 
 const registrationForm = document.getElementById('registrationForm')
@@ -54,9 +54,12 @@ registrationForm.addEventListener('submit', (e) => {
 
     if (nama.length == 0 || umur.length == 0 || uangSangu.length == 0) {
         alert('Data Registrasi kosong. Silahkan input data anda!')
-        return
+        return 
     } else if (nama.length < 10 || umur < 25 || uangSangu < 100000 || uangSangu > 1000000) {
-        alert('Data tidak memenuhi kriteria. Periksa kembali isian Anda.')
+        alert('Data tidak memenuhi kriteria. Periksa kembali isian Anda!')
+        document.getElementById('nama').value = ''
+        document.getElementById('umur').value = ''
+        document.getElementById('uang-sangu').value = ''
         return
     }
 
